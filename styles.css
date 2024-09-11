@@ -1,0 +1,249 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-logo img {
+    max-width: 150px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links .link a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links .link a:hover {
+    color: #007BFF;
+}
+
+.btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+header .content {
+    max-width: 600px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+header h1 span {
+    color: #007BFF;
+}
+
+header p {
+    margin: 20px 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+header .image img {
+    max-width: 400px;
+}
+
+header .blur {
+    position: absolute;
+    background: rgba(0, 123, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(50px);
+}
+
+header .blur:first-of-type {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: -5%;
+}
+
+header .blur:last-of-type {
+    width: 300px;
+    height: 300px;
+    bottom: 10%;
+    right: -5%;
+}
+
+/* Section Styles */
+section {
+    margin: 50px 0;
+}
+
+section .header {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+section .features, section .pricing {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+section .card {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+section .card:hover {
+    transform: translateY(-10px);
+}
+
+section .card h4 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+section .card p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #666;
+}
+
+section .card span {
+    font-size: 3rem;
+    color: #007BFF;
+}
+
+section .card a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+section .sub-header {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 50px 0;
+    position: relative;
+}
+
+footer .column {
+    width: 23%;
+}
+
+footer .column .logo img {
+    max-width: 120px;
+    margin-bottom: 20px;
+}
+
+footer .column h4 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #007BFF;
+}
+
+footer .column a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+footer .column a:hover {
+    text-decoration: underline;
+}
+
+footer .socials a {
+    margin-right: 20px;
+    font-size: 1.5rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+footer .socials a:hover {
+    color: #007BFF;
+}
+
+footer .blur {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+footer .blur:first-of-type {
+    width: 200px;
+    height: 200px;
+    top: -50px;
+    left: -50px;
+}
+
+footer .blur:last-of-type {
+    width: 300px;
+    height: 300px;
+    bottom: -100px;
+    right: -100px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #222;
+    color: white;
+    font-size: 0.9rem;
+}

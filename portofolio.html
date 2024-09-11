@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <style>
+        body {
+    background-image: url('images/b.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background: url(images/b3.png) no-repeat center center/cover;
+    height: 10vh;
+    top: 0;
+    z-index: 1000;
+    transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+header.expanded {
+    height: 50vh;
+}
+
+header:hover {
+    background-color: rgb(164, 49, 49);
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-links a img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+
+.menu-toggle div {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.menu-toggle:hover div {
+    background-color: #f0f4f4;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 28px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #2a90c3;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container h1 {
+    color: white; /* Ensures the title color is white */
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.about-section img {
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-section img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgb(255, 255, 255);
+}
+
+.about-description {
+    max-width: 600px;
+    margin-left: 240px;
+}
+
+.about-description h2 {
+    font-size: 3rem;
+    color: rgb(170, 16, 213);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.about-description h2:hover {
+    color: #f0f4f4;
+}
+
+.about-description p {
+    color: white; /* Ensures description color is white */
+}
+
+.skills-section {
+    padding: 100px;
+    text-align: center;
+}
+
+.skills-section h2 {
+    margin-bottom: 5px;
+    font-size: 2rem;
+    color: white;
+    transition: color 0.2s ease;
+}
+
+.skills-section h2:hover {
+    color: #f0f4f4;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.skill-cube {
+    background-color: rgb(176, 159, 159);
+    color: white;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-cube img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.skill-cube:hover {
+    transform: rotateY(360deg);
+    background-color: #955792;
+}
+
+.projects-section {
+    padding: 10px;
+    text-align: center;
+}
+
+.projects-section h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.projects-section h2:hover {
+    color: #f0f4f4;
+}
+
+.project-card {
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgb(243, 239, 239);
+}
+
+.project-card img {
+    width: 20%;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.project-card p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.project-card a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: #a218cb;
+}
+
+.resume-section {
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.resume-section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color:white;
+    transition: color 0.3s ease;
+}
+
+.resume-section h2:hover {
+    color:white;
+}
+
+.resume-content {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgb(242, 244, 244);
+    transition: transform 0.4s ease;
+}
+
+.resume-content:hover {
+    transform: scale(1.05);
+}
+
+.resume-content p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: white; /* Ensures resume description color is white */
+}
+
+.resume-content a {
+    color:white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.resume-content a:hover {
+    color: #ad07db;
+}
+
+.contact-section {
+    padding: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.contact-section h2 {
+    margin-bottom: 50px;
+    font-size: 2rem;
+    color:white;
+    transition: color 0.3s ease;
+}
+
+.contact-section h2:hover {
+    color: #ff69b4;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    width: 75%;
+}
+
+.contact-form button {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #ff1493;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #ff69b4;
+    transform: scale(1.05);
+}
+.container h1 {
+    color: white; /* Title "PORTFOLIO" in white */
+}
+
+.about-description p {
+    color: white; /* Description "I am currently pursuing a B.Tech degree..." in white */
+}
+
+.resume-content p {
+    color: white; /* Resume description in white */
+}
+
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="logo"></div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#resume">Resume</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="menu-toggle" onclick="toggleHeader()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>PORTFOLIO</h1>
+    </div>
+    <section id="about" class="about-section">
+        <img src="images/ms.png" alt="About">
+        <div class="about-description">
+            <h2>Hi, I'm SHIVA KUMAR</h2>
+            <p>
+                I am currently pursuing a B.Tech degree from CMR TECHNICAL CAMPUS. 
+                My passion lies in Web Development, and I am dedicated to advancing my skills 
+                in HTML, CSS, JavaScript, MySQL, Node.js, and Express.js.
+            </p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/macharla-shiva-kumar-939120278/" target="_blank">
+                    <img src="images/ln.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.instagram.com/shiva__macharla/?hl=en" target="_blank">
+                    <img src="images/ins.jpeg" alt="Instagram">
+                </a>
+                <a href="https://x.com/shiva__macharla" target="_blank">
+                    <img src="images/x.jpeg" alt="Twitter">
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="skills" class="skills-section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-cube">
+                <img src="images/header 3.jpg" alt="Java">
+                <span>Java</span>
+            </div>
+            <div class="skill-cube">
+                <img src="images/d 4.png" alt="Node.js">
+                <span>Node.js</span>
+            </div>
+            <div class="skill-cube">
+                <img src="images/d5.jpeg" alt="React.js">
+                <span>React.js</span>
+            </div>
+            <div class="skill-cube">
+                <img src="images/py.png" alt="PYTHON">
+                <span>PYTHON</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <img src="images/ff.png" alt="FUSION FOCUS">
+            <h3>FUSION FOCUS</h3>
+            <p>This game helps in the Logic Building. This is the best game for Creative Minds. It is developed using HTML, CSS, JS.</p>
+            <a href="file:///C:/Users/shiva/Desktop/TASK%201/pj%201/index.html" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+            <img src="images/pj.png" alt="QRious Minds">
+            <h3>QRious Minds</h3>
+            <p>This project assists spies (AGENTS). It’s a super project for their operations.</p>
+            <a href="file:///C:/Users/shiva/Desktop/TASK%201/pj%202/index.html" target="_blank">View Project</a>
+        </div>
+        <!-- Add more project cards as needed -->
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section">
+        <h2>Resume</h2>
+        <div class="resume-content">
+            <p>
+                Download my resume to get a detailed overview of my educational background, work experience, skills, and more. 
+                I am always open to opportunities that allow me to grow and make a significant impact.
+            </p>
+            <a href="C:\Users\shiva\Desktop\TASK 1\SK Resume.pdf.pdf" download>My Resume</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact</h2>
+        <div class="contact-content">
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <footer style="text-align: center; padding: 20px; color: white;">
+        &copy; 2024 Shiva Kumar. All rights reserved.
+    </footer>
+    
+
+    <script>
+        function toggleHeader() {
+            const header = document.getElementById('header');
+            header.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>
